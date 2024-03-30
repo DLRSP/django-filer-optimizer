@@ -31,20 +31,6 @@
         # ...
     ]
     ```
-3. Finally, modify your project `urls.py` with handlers for all errors:
-    ```python
-    # ...other imports...
-    
-    urlpatterns = [
-        # ...other urls...
-    ]
-    ```
-4. Execute Django's command `migrate` inside your project's root:
-    ```shell
-    python manage.py migrate
-    Running migrations:
-      Applying filer_optimizer.0001_initial... OK
-    ```
 
 ## Run Example Project
 
