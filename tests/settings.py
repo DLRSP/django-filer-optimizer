@@ -1,6 +1,7 @@
 """Test's settings"""
 
 import os
+import django
 
 from django.utils.translation import gettext_noop
 
@@ -72,7 +73,17 @@ LANGUAGES = [
     ("zh-hant", gettext_noop("Traditional Chinese")),
 ]
 
-DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+if django.VERSION < (4, 2):
+    DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+    THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
+else:
+    # See: https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STORAGES
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+    }
+    THUMBNAIL_DEFAULT_STORAGE = STORAGES["default"]["BACKEND"]
 
 # THUMBNAIL
 THUMBNAIL_PREFIX = "thumbs_"
@@ -103,7 +114,6 @@ THUMBNAIL_ALIASES = {
         "250": {"size": (250, 250), "crop": True},
     },
 }
-THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 if os.name != "nt":
     THUMBNAIL_OPTIMIZE_COMMAND = {
         "png": "/usr/bin/optipng {filename}",
