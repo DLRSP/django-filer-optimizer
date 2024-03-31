@@ -10,7 +10,6 @@ from django.urls import reverse
 from filer.models.imagemodels import Image
 
 from tests.helpers import create_image, create_superuser
-from filer_optimizer.signals import image_optimizer
 
 LOGGER = logging.getLogger(name="django-filer-optimizer")
 

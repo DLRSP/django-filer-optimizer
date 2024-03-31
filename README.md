@@ -31,6 +31,16 @@
         # ...
     ]
     ```
+3. Modify `settings.py` by adding the config `THUMBNAIL_DEFAULT_STORAGE`:
+    ```python
+    # See: https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STORAGES
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+    }
+    THUMBNAIL_DEFAULT_STORAGE = STORAGES["default"]["BACKEND"]
+    ```
 
 ## Run Example Project
 

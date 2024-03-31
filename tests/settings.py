@@ -4,6 +4,7 @@ import os
 import django
 
 from django.utils.translation import gettext_noop
+from easy_thumbnails.conf import Settings as thumbnail_settings
 
 DEBUG = False
 
@@ -120,8 +121,6 @@ if os.name != "nt":
         "gif": "/usr/bin/optipng {filename}",
         "jpeg": "/usr/bin/jpegoptim {filename}",
     }
-
-from easy_thumbnails.conf import Settings as thumbnail_settings
 
 THUMBNAIL_PROCESSORS = (
     "image_cropping.thumbnail_processors.crop_corners",
