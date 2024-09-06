@@ -34,17 +34,17 @@ cssselect2==0.7.0 \
     --hash=sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a \
     --hash=sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969
     # via svglib
-django==4.2.15 \
-    --hash=sha256:61ee4a130efb8c451ef3467c67ca99fdce400fedd768634efc86a68c18d80d30 \
-    --hash=sha256:c77f926b81129493961e19c0e02188f8d07c112a1162df69bfab178ae447f94a
+django==4.2.16 \
+    --hash=sha256:1ddc333a16fc139fd253035a1606bb24261951bbc3a6ca256717fa06cc41a898 \
+    --hash=sha256:6f1616c2786c408ce86ab7e10f792b8f15742f7b7b7460243929cb371e7f1dad
     # via
     #   -r requirements/requirements.in
     #   django-filer
     #   django-polymorphic
     #   easy-thumbnails
-django-filer==3.1.4 \
-    --hash=sha256:41dac6d7a912bd10a49cb55431108397622c23358f48645255a11a7bf7a6d230 \
-    --hash=sha256:d1bd5bba7699f11beb1fd4d1eee355ee53746491d903f691f8100cdfb53850a1
+django-filer==3.2.1 \
+    --hash=sha256:5100a60d13023e4d29dc060d087c929e06f83e3ce87ba01abcb8f1d6c1a90ca8 \
+    --hash=sha256:6bea3567a36ea5233acbec5a5829b7ff51f76974de36a60f5594eaa0a0748d8a
     # via -r requirements/requirements.in
 django-polymorphic==3.1.0 \
     --hash=sha256:08bc4f4f4a773a19b2deced5a56deddd1ef56ebd15207bf4052e2901c25ef57e \
