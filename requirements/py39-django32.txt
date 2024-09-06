@@ -24,9 +24,9 @@ django==3.2.25 \
     #   django-filer
     #   django-polymorphic
     #   easy-thumbnails
-django-filer==3.1.4 \
-    --hash=sha256:41dac6d7a912bd10a49cb55431108397622c23358f48645255a11a7bf7a6d230 \
-    --hash=sha256:d1bd5bba7699f11beb1fd4d1eee355ee53746491d903f691f8100cdfb53850a1
+django-filer==3.2.1 \
+    --hash=sha256:5100a60d13023e4d29dc060d087c929e06f83e3ce87ba01abcb8f1d6c1a90ca8 \
+    --hash=sha256:6bea3567a36ea5233acbec5a5829b7ff51f76974de36a60f5594eaa0a0748d8a
     # via -r requirements/requirements.in
 django-polymorphic==3.1.0 \
     --hash=sha256:08bc4f4f4a773a19b2deced5a56deddd1ef56ebd15207bf4052e2901c25ef57e \
