@@ -32,9 +32,9 @@ django-polymorphic==3.1.0 \
     --hash=sha256:08bc4f4f4a773a19b2deced5a56deddd1ef56ebd15207bf4052e2901c25ef57e \
     --hash=sha256:d6955b5308bf6e41dcb22ba7c96f00b51dfa497a8a5ab1e9c06c7951bf417bf8
     # via django-filer
-easy-thumbnails[svg]==2.9 \
-    --hash=sha256:532ff633abc5e0d1631b9d0e8e73517c8fa99e37814397fd2ae54c46da244857 \
-    --hash=sha256:7a7e83b48c2b6808d58ce101ddb9ea6eae2c5285e608cc337c2e110a7bb442b4
+easy-thumbnails[svg]==2.10 \
+    --hash=sha256:9e446fb9da1ca0cbc99bdd1fe8fdd5c38784323d64393a37e16d13cd736980b2 \
+    --hash=sha256:d009462fcd791edf2496e5ed46d044712e1a06b7d4600e4cf2812002e9904ef5
     # via
     #   -r requirements/requirements.in
     #   django-filer
