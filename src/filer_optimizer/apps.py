@@ -8,4 +8,5 @@ class FilerOptimizerConfig(AppConfig):
     verbose_name = "Filer Optimizer"
 
     def ready(self):
+        from . import settings
         from . import signals

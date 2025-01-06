@@ -5,10 +5,22 @@ from django.core.files.storage import default_storage
 from easy_thumbnails.files import get_thumbnailer
 from easy_thumbnails.models import Thumbnail
 from io import BytesIO
+import pillow_avif
 from PIL import Image
 from pathlib import Path
 
-# import pillow_avif
+
+def setting(name, default=None):
+    """
+    Helper function to get a Django setting by name. If setting doesn't exists
+    it will return a default.
+
+    :param name: Name of setting
+    :type name: str
+    :param default: Value if setting is unfound
+    :returns: Setting's value
+    """
+    return getattr(settings, name, default)
 
 
 def annotate_queryset_with_thumbnails(
@@ -77,10 +89,10 @@ def store_as_webp(instance, **kwargs):
         # print(f"File read from default storage and buffer opened")
 
         # Converting the image to RGB colour
-        image = image.convert("RGB")
+        image = image.convert("RGBA")
 
         # Saving the image as a different file inside buffer
-        image.save(buffer, "webp", optimize=True, quality=95)
+        image.save(buffer, "webp", optimize=True, quality=settings.FILER_WEBP_QUALITY)
         # print(f"File saved inside buffer")
 
         # Save the buffer data through the storage backend
@@ -114,7 +126,7 @@ def store_as_avif(instance, **kwargs):
 
         suffix = Path(instance_filename).suffix
         if suffix == ".avif":
-            raise AttributeError(f"File is already a webp! [{instance_filename}]")
+            raise AttributeError(f"File is already a avif! [{instance_filename}]")
 
         new_path = str(Path(instance_filename).with_suffix(f"{suffix}.avif"))
         # print(f"New file with avif suffix [{new_path}]")
@@ -126,11 +138,11 @@ def store_as_avif(instance, **kwargs):
         buffer = BytesIO()
         # print(f"File read from default storage and buffer opened ...")
 
-        # Converting the image to RGB colour
-        image = image.convert("RGB")
+        # Converting the image to RGBA colour
+        image = image.convert("RGBA")
 
         # Saving the image as a different file inside buffer
-        image.save(buffer, "avif", optimize=True, quality=60)
+        image.save(buffer, "avif", optimize=True, quality=settings.FILER_AVIF_QUALITY)
         # print(f"File saved inside buffer...")
 
         # Save the buffer data through the storage backend
