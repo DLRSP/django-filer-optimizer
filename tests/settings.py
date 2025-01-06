@@ -87,32 +87,11 @@ else:
     THUMBNAIL_DEFAULT_STORAGE = STORAGES["default"]["BACKEND"]
 
 # THUMBNAIL
-THUMBNAIL_PREFIX = "thumbs_"
-THUMBNAIL_NAMER = "easy_thumbnails.namers.source_hashed"
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_PROCESSORS = (
-    "easy_thumbnails.processors.colorspace",
-    "easy_thumbnails.processors.autocrop",
-    # 'easy_thumbnails.processors.scale_and_crop',
-    "filer.thumbnail_processors.scale_and_crop_with_subject_location",
-    "easy_thumbnails.processors.filters",
-)
 FILER_STORAGES = {
     "public": {
         "thumbnails": {
             "THUMBNAIL_OPTIONS": {"base_dir": ""},
         },
-    },
-}
-THUMBNAIL_ALIASES = {
-    "default": {
-        "head": {"size": (1920, 1080), "crop": True},
-        "middle": {"size": (1080, 1620), "crop": True},
-        "preview": {"size": (750, 480), "crop": True},
-        "grid": {"size": (800, 720), "crop": True},
-        "70": {"size": (70, 70), "crop": True},
-        "130": {"size": (130, 130), "crop": True},
-        "250": {"size": (250, 250), "crop": True},
     },
 }
 if os.name != "nt":
