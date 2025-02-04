@@ -358,9 +358,9 @@ pillow-avif-plugin==1.4.6 \
     --hash=sha256:fe06bdb3ec104f5e1b8c03a0bfb22e3d23b4e94591ae73caec1940ce54eccc67 \
     --hash=sha256:fe32db84ba0c9d9b364e2b36a55620d6112133107f82854f19a4fdaa93fce66b
     # via -r requirements/requirements.in
-reportlab==4.2.5 \
-    --hash=sha256:5cf35b8fd609b68080ac7bbb0ae1e376104f7d5f7b2d3914c7adc63f2593941f \
-    --hash=sha256:eb2745525a982d9880babb991619e97ac3f661fae30571b7d50387026ca765ee
+reportlab==4.3.0 \
+    --hash=sha256:81e7bb207132c430cdb9d9f41cfdd1e0fbd1b0eb26a0f7def55d39c1680ad345 \
+    --hash=sha256:a90754589bea1c921a745aa981677d2d144f50c690800cda29aafae67c1a8d93
     # via
     #   easy-thumbnails
     #   svglib
