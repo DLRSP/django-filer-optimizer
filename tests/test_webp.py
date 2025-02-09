@@ -1,12 +1,11 @@
 """Unit Tests for the module"""
 
-import os
 import logging
+import os
 
-from django.test import TestCase
 from django.core.files import File as DjangoFile
+from django.test import TestCase
 from django.urls import reverse
-
 from filer.models.imagemodels import Image
 
 from tests.helpers import create_image, create_superuser
@@ -43,7 +42,6 @@ class TestCase(TestCase):
 
     # @patch('filer_optimizer.signals.image_optimizer.send')
     def test_upload_image_form(self, extra_headers={}):
-
         # self.assertEqual(Image.objects.count(), 0)
         with open(self.filename, "rb") as fh:
             file_obj = DjangoFile(fh)

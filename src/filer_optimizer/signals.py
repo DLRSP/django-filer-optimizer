@@ -2,7 +2,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from easy_thumbnails.signals import thumbnail_created
 from filer.models import Image as FilerImage
-from .utils import generate_thumbnails, store_as_webp, store_as_avif
+
+from .utils import generate_thumbnails, store_as_avif, store_as_webp
 
 
 @receiver(post_save, sender=FilerImage)

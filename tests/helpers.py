@@ -1,5 +1,5 @@
-from PIL import Image, ImageDraw
 from django.contrib.auth.models import User
+from PIL import Image, ImageDraw
 
 
 def create_superuser():

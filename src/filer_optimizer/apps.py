@@ -1,4 +1,3 @@
-# coding: utf-8
 from django.apps import AppConfig
 
 
@@ -8,5 +7,4 @@ class FilerOptimizerConfig(AppConfig):
     verbose_name = "Filer Optimizer"
 
     def ready(self):
-        from . import settings
-        from . import signals
+        from . import settings, signals

@@ -1,6 +1,6 @@
 from django.conf import settings
-from .utils import setting
 
+from .utils import setting
 
 settings.THUMBNAIL_PREFIX = setting("THUMBNAIL_PREFIX", "thumbs_")
 

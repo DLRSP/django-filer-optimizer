@@ -1,8 +1,8 @@
 """Test's settings"""
 
 import os
-import django
 
+import django
 from django.utils.translation import gettext_noop
 from easy_thumbnails.conf import Settings as thumbnail_settings
 

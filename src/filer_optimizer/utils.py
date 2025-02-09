@@ -1,13 +1,14 @@
+from io import BytesIO
+from pathlib import Path
+
+import pillow_avif
 from django.conf import settings
 from django.core.files import File
-from django.db.models import Q, Subquery, OuterRef
 from django.core.files.storage import default_storage
+from django.db.models import OuterRef, Q, Subquery
 from easy_thumbnails.files import get_thumbnailer
 from easy_thumbnails.models import Thumbnail
-from io import BytesIO
-import pillow_avif
 from PIL import Image
-from pathlib import Path
 
 
 def setting(name, default=None):
