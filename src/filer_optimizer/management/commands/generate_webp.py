@@ -13,7 +13,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             for image in Image.objects.all():
-                self.stdout.write(f"----------------------")
+                self.stdout.write("----------------------")
                 self.stdout.write(
                     f"{image} - {image.width}x{image.height} - {image.mime_type} - {image.file}"
                 )
