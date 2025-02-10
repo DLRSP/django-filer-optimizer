@@ -8,6 +8,7 @@ from django.core.files.storage import default_storage
 from django.db.models import OuterRef, Q, Subquery
 from easy_thumbnails.files import get_thumbnailer
 from easy_thumbnails.models import Thumbnail
+from filer.models import Image as FilerImage
 from PIL import Image
 
 
@@ -36,9 +37,12 @@ def annotate_queryset_with_thumbnails(
     """
     width, height = settings.THUMBNAIL_ALIASES[thumbnail_conf][thumbnail_size]["size"]
     size_name = f"_{width}x{height}_"
+    source_subquery = Subquery(
+        FilerImage.objects.filter(id=OuterRef(OuterRef(img_name))).values("file")
+    )
     thumbnails_subquery = Subquery(
         Thumbnail.objects.filter(
-            Q(source__id=OuterRef(img_name))
+            Q(source__name=source_subquery)
             & Q(name__icontains=settings.THUMBNAIL_PREFIX)
             & Q(name__icontains=size_name),
         ).values("name")[:1]
