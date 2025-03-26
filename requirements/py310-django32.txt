@@ -329,9 +329,9 @@ pillow-avif-plugin==1.5.1 \
     --hash=sha256:fad2fcb1c944f1cd9441c2d60873f838a82933a2fffc0fe1d26415c88a80cf5d \
     --hash=sha256:fe1c9de609bdae77228a7d3301302ae94ddff97f88cb185fa1694fadf4234276
     # via -r requirements/requirements.in
-pytz==2025.1 \
-    --hash=sha256:89dd22dca55b46eac6eda23b2d72721bf1bdfef212645d81513ef5d03038de57 \
-    --hash=sha256:c2db42be2a2518b28e65f9207c4d05e6ff547d1efa4086469ef855e4ab70178e
+pytz==2025.2 \
+    --hash=sha256:360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3 \
+    --hash=sha256:5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00
     # via django
 reportlab==4.3.1 \
     --hash=sha256:0f37dd16652db3ef84363cf744632a28c38bd480d5bf94683466852d7bb678dd \
@@ -352,9 +352,9 @@ tinycss2==1.4.0 \
     # via
     #   cssselect2
     #   svglib
-typing-extensions==4.12.2 \
-    --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
-    --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
+typing-extensions==4.13.0 \
+    --hash=sha256:0a4ac55a5820789d87e297727d229866c9650f6521b64206413c4fbada24d95b \
+    --hash=sha256:c8dd92cc0d6425a97c18fbb9d1954e5ff92c1ca881a309c45f06ebc0b79058e5
     # via asgiref
 webencodings==0.5.1 \
     --hash=sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78 \
