@@ -135,4 +135,3 @@ allow_dirty = true
 
 [[tool.bumpversion.files]]
 filename = "./src/filer_optimizer/__init__.py"
-
