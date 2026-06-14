@@ -1,7 +1,7 @@
 from io import BytesIO
 from pathlib import Path
 
-import pillow_avif
+import pillow_avif  # noqa: F401
 from django.conf import settings
 from django.core.files import File
 from django.core.files.storage import default_storage

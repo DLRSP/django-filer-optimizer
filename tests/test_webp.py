@@ -41,7 +41,9 @@ class TestCase(TestCase):
         super().tearDown()
 
     # @patch('filer_optimizer.signals.image_optimizer.send')
-    def test_upload_image_form(self, extra_headers={}):
+    def test_upload_image_form(self, extra_headers=None):
+        if extra_headers is None:
+            extra_headers = {}
         # self.assertEqual(Image.objects.count(), 0)
         with open(self.filename, "rb") as fh:
             file_obj = DjangoFile(fh)
