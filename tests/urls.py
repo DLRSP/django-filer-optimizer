@@ -11,5 +11,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    re_path(r"^jsi18n/$", JavaScriptCatalog.as_view(), name="javascript-catalog"),
+    re_path(
+        r"^jsi18n/$", JavaScriptCatalog.as_view(), name="javascript-catalog"
+    ),
 )

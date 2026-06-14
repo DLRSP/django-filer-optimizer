@@ -3,7 +3,9 @@ from PIL import Image, ImageDraw
 
 
 def create_superuser():
-    superuser = User.objects.create_superuser("admin", "admin@django.it", "secret")
+    superuser = User.objects.create_superuser(
+        "admin", "admin@django.it", "secret"
+    )
     return superuser
 
 

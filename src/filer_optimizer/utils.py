@@ -35,10 +35,14 @@ def annotate_queryset_with_thumbnails(
     """
     Used by views to annotate a queryset with thumbnail
     """
-    width, height = settings.THUMBNAIL_ALIASES[thumbnail_conf][thumbnail_size]["size"]
+    width, height = settings.THUMBNAIL_ALIASES[thumbnail_conf][thumbnail_size][
+        "size"
+    ]
     size_name = f"_{width}x{height}_"
     source_subquery = Subquery(
-        FilerImage.objects.filter(id=OuterRef(OuterRef(img_name))).values("file")
+        FilerImage.objects.filter(id=OuterRef(OuterRef(img_name))).values(
+            "file"
+        )
     )
     thumbnails_subquery = Subquery(
         Thumbnail.objects.filter(
@@ -61,7 +65,9 @@ def generate_thumbnails(instance, thumbnail_conf="default", **kwargs):
         print(f"Function: [generate_thumbnails] for image [{instance}]")
         thumbnailer = get_thumbnailer(f"{instance.file}")
         for x_key in settings.THUMBNAIL_ALIASES[thumbnail_conf].keys():
-            thumbnail_options = settings.THUMBNAIL_ALIASES[thumbnail_conf][x_key]
+            thumbnail_options = settings.THUMBNAIL_ALIASES[thumbnail_conf][
+                x_key
+            ]
             if not thumbnailer.get_existing_thumbnail(thumbnail_options):
                 thumbnailer.get_thumbnail(thumbnail_options)
     except Exception as e:
@@ -82,7 +88,9 @@ def store_as_webp(instance, **kwargs):
 
         suffix = Path(instance_filename).suffix
         if suffix == ".webp":
-            raise AttributeError(f"File is already a webp! [{instance_filename}]")
+            raise AttributeError(
+                f"File is already a webp! [{instance_filename}]"
+            )
         new_path = str(Path(instance_filename).with_suffix(f"{suffix}.webp"))
         # print(f"New file name with webp suffix [{new_path}]")
 
@@ -97,7 +105,9 @@ def store_as_webp(instance, **kwargs):
         image = image.convert("RGBA")
 
         # Saving the image as a different file inside buffer
-        image.save(buffer, "webp", optimize=True, quality=settings.FILER_WEBP_QUALITY)
+        image.save(
+            buffer, "webp", optimize=True, quality=settings.FILER_WEBP_QUALITY
+        )
         # print(f"File saved inside buffer")
 
         # Save the buffer data through the storage backend
@@ -131,7 +141,9 @@ def store_as_avif(instance, **kwargs):
 
         suffix = Path(instance_filename).suffix
         if suffix == ".avif":
-            raise AttributeError(f"File is already a avif! [{instance_filename}]")
+            raise AttributeError(
+                f"File is already a avif! [{instance_filename}]"
+            )
 
         new_path = str(Path(instance_filename).with_suffix(f"{suffix}.avif"))
         # print(f"New file with avif suffix [{new_path}]")
@@ -147,7 +159,9 @@ def store_as_avif(instance, **kwargs):
         image = image.convert("RGBA")
 
         # Saving the image as a different file inside buffer
-        image.save(buffer, "avif", optimize=True, quality=settings.FILER_AVIF_QUALITY)
+        image.save(
+            buffer, "avif", optimize=True, quality=settings.FILER_AVIF_QUALITY
+        )
         # print(f"File saved inside buffer...")
 
         # Save the buffer data through the storage backend

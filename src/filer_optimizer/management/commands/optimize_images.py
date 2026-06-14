@@ -4,7 +4,11 @@
 from django.core.management.base import BaseCommand, CommandError
 from filer.models.imagemodels import Image
 
-from filer_optimizer.utils import generate_thumbnails, store_as_avif, store_as_webp
+from filer_optimizer.utils import (
+    generate_thumbnails,
+    store_as_avif,
+    store_as_webp,
+)
 
 
 class Command(BaseCommand):

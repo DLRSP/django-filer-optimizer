@@ -20,7 +20,9 @@ def image_optimizer(sender, instance, **kwargs):
 @receiver(thumbnail_created)
 def store_thumbnail_as_webp(sender, **kwargs):
     try:
-        print(f"Signal fired: [store_thumbnail_as_webp] for image [{sender.name}]")
+        print(
+            f"Signal fired: [store_thumbnail_as_webp] for image [{sender.name}]"
+        )
         store_as_webp(sender)
     except Exception as e:
         print(f"Signal Exception: {e}")
@@ -29,7 +31,9 @@ def store_thumbnail_as_webp(sender, **kwargs):
 @receiver(thumbnail_created)
 def store_thumbnail_as_avif(sender, **kwargs):
     try:
-        print(f"Signal fired: [store_thumbnail_as_avif] for image [{sender.name}]")
+        print(
+            f"Signal fired: [store_thumbnail_as_avif] for image [{sender.name}]"
+        )
         store_as_avif(sender)
     except Exception as e:
         print(f"Signal Exception: {e}")
