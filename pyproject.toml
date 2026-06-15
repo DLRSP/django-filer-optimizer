@@ -86,6 +86,20 @@ version = { attr = "filer_optimizer.__version__" }
 [tool.setuptools.packages.find]
 where = ["src"]
 
+
+[tool.setuptools.data-files]
+"share/django-filer-optimizer/requirements" = [
+  "requirements/py310-django32.txt",
+  "requirements/py310-django42.txt",
+  "requirements/py310-django52.txt",
+  "requirements/py311-django42.txt",
+  "requirements/py311-django52.txt",
+  "requirements/py312-django42.txt",
+  "requirements/py312-django52.txt",
+  "requirements/py313-django52.txt",
+  "requirements/py314-django52.txt",
+  "requirements/py39-django42.txt",
+]
 [tool.distutils.bdist_wheel]
 universal = false
 
