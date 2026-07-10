@@ -119,9 +119,9 @@ django-filer==3.5.0 \
     --hash=sha256:0d1068524d30d06d0b2a6d3c1039ad84ec46c9c1d1f68df94e45b86e8d0e96f7 \
     --hash=sha256:159d6683916282cfbe8d7ccdbc5188d91344146d2805b89bcb3146a70a0d350f
     # via -r requirements/runtime.in
-django-polymorphic==4.11.5 \
-    --hash=sha256:8c65b5c109c057c51e059197b01765dd5e096b3fd393ee3038bffc294681b3be \
-    --hash=sha256:9a6fe66fab12cfe06aac81942d14670c6b0204aebd30ce9fb58fb53213c613eb
+django-polymorphic==4.11.6 \
+    --hash=sha256:240e1edf7d1bb17a50794b1a7954843ee264e0289e654a0be029655d0b23d7f2 \
+    --hash=sha256:993240e219d3f6e90548d4adedf1e702a56f79a5880ac4f44f0fbf53bda04897
     # via django-filer
 easy-thumbnails[svg]==2.10.1 \
     --hash=sha256:24462d63dd31543ef1585538b2bfefe0db96d3409bb431c70b81548fb2cfc5be \
