@@ -182,9 +182,9 @@ charset-normalizer==3.5.1 \
     --hash=sha256:fd0a274c0e5f9a21565cd9d3dd749b61f96b7aa1e20a93aa1ba4029518f2e5c0 \
     --hash=sha256:fdb8a068947befafba9952162645dc2fecaeb400e64584829ed5e9b2fbe21a7f
     # via reportlab
-cssselect2==0.10.0 \
-    --hash=sha256:5bc3e3e8da5e77a4a7396a464b5582200d8813bca40fa940263ac5ae57aafccd \
-    --hash=sha256:f80848dab8ae74bd359b819dc85db349770d6a2861b6db737ca527c248269ec3
+cssselect2==0.10.1 \
+    --hash=sha256:25cc4494d55985d6a6da359be48da6ce98c28dcbafa2314c383ace3fc32ec868 \
+    --hash=sha256:83b0d820ef589dabaf693289b647c2f5b410f76d285f56deba911ffa75a7b9d1
     # via svglib
 django==4.2.30 \
     --hash=sha256:4d07aaf1c62f9984842b67c2874ebbf7056a17be253860299b93ae1881faad65 \
